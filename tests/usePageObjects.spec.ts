@@ -23,7 +23,7 @@ test('parametrized methods @smoke', async({page}) => {
     const randomEmail = `${randomFullName.replace(' ', '')}${faker.number.int(1000)}@test.com`
 
     await pm.navigateTo().formLayoutsPage()
-    await pm.onFormLayoutsPage().submitUsingTheGrigdFormWithCredentialsAndSelectOption('test@test.com', 'Welcome1', 'Option 2')
+    await pm.onFormLayoutsPage().submitUsingTheGrigdFormWithCredentialsAndSelectOption(process.env.USERNAME, process.env.PASSWORD, 'Option 2')
     await pm.onFormLayoutsPage().sumbitInlineFormWithNameEmailAndCheckbox(randomFullName, randomEmail, false)
    
     await pm.navigateTo().datepickerPage()
