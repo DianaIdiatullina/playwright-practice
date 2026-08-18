@@ -69,6 +69,14 @@ export default defineConfig<TestOptions>({
       use: { ...devices['Desktop Safari'] },
     },
 
+     {
+      name: 'pageObjectFullScreen',
+      testMatch: 'usePageObjects.spec.ts',
+      use: {
+        viewport: {width: 1920, height: 1080}
+      }
+    },
+
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
@@ -78,6 +86,13 @@ export default defineConfig<TestOptions>({
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
     // },
+    {
+      name: 'mobile',
+      testMatch: 'testMobile.spec.ts',
+      use: {
+        ...devices['iPhone 13 Pro']
+      }
+    }
 
     /* Test against branded browsers. */
     // {
